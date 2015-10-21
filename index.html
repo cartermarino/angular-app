@@ -1,15 +1,25 @@
 <!doctype html>
 <html ng-app="iTunes">
-<head>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
-  <script type="text/javascript" src="/iTunes.js"></script>
+  <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
+    <script type="text/javascript" src="iTunes.js"></script>
 
-  <title>Angular iTunes</title>
-</head>
-<body>
-<div ng-controller="iTunesCtrl">
-  {{greeting}}
-</div>
-</body>
+    <title>Angular iTunes</title>
+  </head>
+  <body>
+  <div ng-controller="iTunesCtrl as iTunes">
+    <ul>
+      <li ng-repeat="music in iTunes.music">
+        <span>{{music.text}}</span>
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <div class="search form">
+    <input type="text" ng-model="search" ng-change="change()" placeholder="Please enter name of artist">
+  </div>
+  <div class='main-info' ng-model='details'>
+  </div>
+  </body>
 </html>
