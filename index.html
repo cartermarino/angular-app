@@ -1,18 +1,30 @@
 <!doctype html>
-<html ng-app>
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-  <script type="text/javascript" src="./iTunes.js"></script>
-  <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/> -->
-  <title>Angular iTunes</title>
-</head>
-<body>
-	<h1> Angular Demo using iTunes API</h1>
-<!-- <div ng-controller="iTunesCtrl"> -->
+<html ng-app="iTunes">
+  <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
+    <script type="text/javascript" src="iTunes.js"></script>
 
-<input type='text' ng-model="test">
-	<p>{{test}}</p>
+    <title>Angular iTunes</title>
+  </head>
+  <body>
+  <div ng-controller="iTunesCtrl as iTunes">
+    <ul>
+      <!-- <li ng-repeat="music in iTunes.music">
+        <span>You searched for: {{search}}</span>
+      </li> -->
+    </ul>
 
-<!-- </div> -->
-</body>
-</html>
+  <hr>
+  <div class="search form">
+    <input type="text" ng-model="search"  placeholder="Please enter name of artist">
+  </div>
+  <div class='main-info' ng-model='details'>
+    {{title}}
+
+  </div>
+  </div>
+  </body>
+
+
+
