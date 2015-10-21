@@ -1,19 +1,71 @@
 <!doctype html>
 <html ng-app="iTunes">
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
     <script type="text/javascript" src="iTunes.js"></script>
 
-    <title>Angular iTunes</title>
+    <title>Angular Demo w/ OMDBapi</title>
   </head>
+
   <body>
-  <div ng-controller="iTunesCtrl as iTunes">
-    <ul>
-      <!-- <li ng-repeat="music in iTunes.music">
-        <span>You searched for: {{search}}</span>
-      </li> -->
-    </ul>
+    <div class="container" div ng-controller="iTunesCtrl as iTunes">
+      <h1>Anuglar Demo: Movie Listing</h1>
+
+      <div class="alert alert-info">
+        <p>Sort Type: {{ sortType }}</p>
+        <p>Sort Reverse: {{ sortReverse }}</p>
+        <p>Search Query: {{ searchMovie }}</p>
+      </div>
+
+
+      <form>
+        <input type="text" class="form-control" placeholder="Search Collection" ng-model="searchMovie">
+      </form>
+
+
+      <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>
+            <a href="#" ng-click="sortType = 'title'; sortReverse = !sortReverse">
+                   Title 
+                  <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
+                  </a>
+          </th>
+          <th>
+            <a href="#" ng-click="sortType = 'year'; sortReverse = !sortReverse">
+                   Year 
+                  <span ng-show="sortType == 'year' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'year' && sortReverse" class="fa fa-caret-up"></span>
+                  </a>
+          </th>
+          <th>
+            <a href="#" ng-click="sortType = 'plot'; sortReverse = !sortReverse">
+                   Plot
+                  <span ng-show="sortType == 'plot' && !sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="sortType == 'plot' && sortReverse" class="fa fa-caret-up"></span>
+                  </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="search in searches | orderBy:sortType:sortReverse | filter:searchMovie">
+          <td>{{search.Title}}</td>
+          <td>{{search.Year}}</td>
+          <td><a href="http://www.imdb.com/title/{{search.imdbID}}">IMDB</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+    
 
   <hr>
   <div class="search form">
@@ -26,3 +78,5 @@
   </div>
   </body>
 </html>
+
+
