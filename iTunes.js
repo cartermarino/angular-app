@@ -14,10 +14,11 @@ angular.module('iTunes', [])
     }
 
 
-    function fetch(name) {
+    function fetch() {
+      console.log($scope.search)
       $http({
         method: "GET",
-        url: "http://www.omdbapi.com/?s="+name
+        url: "http://www.omdbapi.com/?s="+$scope.search
       }).then(function successCallback(response){
         console.log(response.data.Search)
         $scope.searches = response.data.Search
@@ -31,4 +32,3 @@ angular.module('iTunes', [])
     };
 
 });
-
