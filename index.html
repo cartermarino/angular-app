@@ -1,50 +1,48 @@
 <!doctype html>
 <html ng-app="iTunes">
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/style.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
-    <script type="text/javascript" src="iTunes.js"></script>
-
-    <title>Angular Demo w/ OMDBapi</title>
-  </head>
-
-  <body>
-    <div class="container" div ng-controller="iTunesCtrl as iTunes">
-      <h1>Angular Demo: Movie Listing</h1>
-      <div class="alert alert-info">
-        <div class="search form">
-          <input type="text" ng-model="search" class="form-control" placeholder="Search movies...">
-          <button ng-click=fetch()>Search</button>
-        </div>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
+  <script type="text/javascript" src="iTunes.js"></script>
+  <title>Angular Demo w/ OMDBapi</title>
+</head>
+<body>
+  <div class="container" div ng-controller="iTunesCtrl as iTunes">
+    <h1>Angular Demo: Movie Listing</h1>
+    <div class="alert alert-info">
+      <div class="search form">
+        <input type="text" ng-model="search" class="form-control" placeholder="Search movies...">
+        <button ng-click=fetch()>Search</button>
       </div>
-      <h2>Search results for "{{search}}"</h2>
-      <table class="table table-bordered table-striped">
+    </div>
+    <h2>Search results for "{{search}}"</h2>
+    <table class="table table-bordered table-striped">
       <thead>
         <tr>
           <th>
-            <a href="#" ng-click="sortType = 'title'; sortReverse = !sortReverse">
-                   Title
-                  <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
-                  </a>
+            <a href="#" ng-click="sortType = 'Title'; sortReverse = !sortReverse">
+              Title
+              <span ng-show="sortType == 'Title' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'Title' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
           </th>
           <th>
-            <a href="#" ng-click="sortType = 'year'; sortReverse = !sortReverse">
-                   Year
-                  <span ng-show="sortType == 'year' && !sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType == 'year' && sortReverse" class="fa fa-caret-up"></span>
-                  </a>
+            <a href="#" ng-click="sortType = 'Year'; sortReverse = !sortReverse">
+              Year
+              <span ng-show="sortType == 'Year' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'Year' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
           </th>
           <th>
-            <a href="#" ng-click="sortType = 'plot'; sortReverse = !sortReverse">
-                   IMDB Page
-                  <span ng-show="sortType == 'plot' && !sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType == 'plot' && sortReverse" class="fa fa-caret-up"></span>
-                  </a>
+            <a href="#" ng-click="sortType = 'Plot'; sortReverse = !sortReverse">
+              Plot
+              <span ng-show="sortType == 'Plot' && !sortReverse" class="fa fa-caret-down"></span>
+              <span ng-show="sortType == 'Plot' && sortReverse" class="fa fa-caret-up"></span>
+            </a>
           </th>
         </tr>
       </thead>
@@ -57,7 +55,6 @@
       </tbody>
     </table>
 
-
   </div>
-  </body>
+</body>
 </html>
