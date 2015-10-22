@@ -6,7 +6,7 @@ angular.module('iTunes', [])
 
 
     if ($scope.search == undefined){
-      $scope.search = "Sherlock Holmes"
+      $scope.search = "Frozen"
       fetch($scope.search);
       $scope.search= ''
     } else {
@@ -31,4 +31,3 @@ angular.module('iTunes', [])
     };
 
 });
-

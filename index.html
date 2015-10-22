@@ -32,21 +32,21 @@
         <tr>
           <th>
             <a href="#" ng-click="sortType = 'title'; sortReverse = !sortReverse">
-                   Title 
+                   Title
                   <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
                   </a>
           </th>
           <th>
             <a href="#" ng-click="sortType = 'year'; sortReverse = !sortReverse">
-                   Year 
+                   Year
                   <span ng-show="sortType == 'year' && !sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="sortType == 'year' && sortReverse" class="fa fa-caret-up"></span>
                   </a>
           </th>
           <th>
             <a href="#" ng-click="sortType = 'plot'; sortReverse = !sortReverse">
-                   Plot
+                   IMDB Page
                   <span ng-show="sortType == 'plot' && !sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="sortType == 'plot' && sortReverse" class="fa fa-caret-up"></span>
                   </a>
@@ -65,19 +65,16 @@
 
 
 
-    
+
 
   <hr>
   <div class="search form">
     <input type="text" ng-model="search"  placeholder="Please enter name of artist">
   </div>
   <div class='main-info' ng-model='details'>
-    {{title}}
+
 
   </div>
   </div>
   </body>
 </html>
-
-
-
