@@ -1,5 +1,5 @@
-angular.module('iTunes', [])
-  .controller('iTunesCtrl', function($scope, $http) {
+angular.module('OMDB', [])
+  .controller('OMDBCtrl', function($scope, $http) {
     $scope.sortType     = 'Title'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
     $scope.searchMovie = '';    // set the default search/filter term
