@@ -5,16 +5,15 @@ angular.module('iTunes', [])
     $scope.searchMovie = '';    // set the default search/filter term
 
     $scope.fetch = function() {
-      console.log($scope.search)
-      $http({
-        method: "GET",
-        url: "http://www.omdbapi.com/?s="+$scope.search
-      }).then(function successCallback(response){
-        console.log(response.data.Search)
-        $scope.searches = response.data.Search
-        },
-        function errorCallback(response){
-        console.log("error " + response)
-      })
+        $http({
+          method: "GET",
+          url: "http://www.omdbapi.com/?s="+$scope.search
+        }).then(function successCallback(response){
+          console.log(response.data.Search)
+          $scope.searches = response.data.Search
+          },
+          function errorCallback(response){
+          console.log("error " + response)
+        })
     };
 });
