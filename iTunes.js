@@ -3,17 +3,6 @@ angular.module('iTunes', [])
     $scope.sortType     = 'Title'; // set the default sort type
     $scope.sortReverse  = false;  // set the default sort order
     $scope.searchMovie = '';    // set the default search/filter term
-
-    // 
-    // if ($scope.search == undefined){
-    //   $scope.search = "Sherlock Holmes"
-    //   fetch($scope.search);
-    //   $scope.search= ''
-    // } else {
-    //   fetch($scope.search);
-    // }
-
-
     function fetch() {
       console.log($scope.search)
       $http({
