@@ -4,14 +4,14 @@ angular.module('iTunes', [])
     $scope.sortReverse  = false;  // set the default sort order
     $scope.searchMovie = '';    // set the default search/filter term
 
-
-    if ($scope.search == undefined){
-      $scope.search = "Sherlock Holmes"
-      fetch($scope.search);
-      $scope.search= ''
-    } else {
-      fetch($scope.search);
-    }
+    // 
+    // if ($scope.search == undefined){
+    //   $scope.search = "Sherlock Holmes"
+    //   fetch($scope.search);
+    //   $scope.search= ''
+    // } else {
+    //   fetch($scope.search);
+    // }
 
 
     function fetch() {
