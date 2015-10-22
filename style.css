@@ -1,0 +1,9 @@
+.form-control {
+  width: 500px;
+  float: left;
+  font-size: 20px;
+}
+button {
+  height: 34px;
+  margin-left: 10px;
+}
