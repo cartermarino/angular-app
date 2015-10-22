@@ -13,7 +13,7 @@
 
   <body>
     <div class="container" div ng-controller="iTunesCtrl as iTunes">
-      <h1>Anuglar Demo: Movie Listing</h1>
+      <h1>Angular Demo: Movie Listing</h1>
 
       <div class="alert alert-info">
         <p>Sort Type: {{ sortType }}</p>
@@ -70,6 +70,7 @@
   <hr>
   <div class="search form">
     <input type="text" ng-model="search"  placeholder="Please enter name of artist">
+    <button ng-click=fetch()>Search</button>
   </div>
   <div class='main-info' ng-model='details'>
 
